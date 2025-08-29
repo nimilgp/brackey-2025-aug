@@ -1,12 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ba6rnpb5ohnyc"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_n1dj2"]
-bounce = 1.0
+[gd_scene load_steps=2 format=3 uid="uid://ba6rnpb5ohnyc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n1dj2"]
 
 [node name="ball" type="RigidBody2D"]
-physics_material_override = SubResource("PhysicsMaterial_n1dj2")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 8

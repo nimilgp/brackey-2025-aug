@@ -13,3 +13,7 @@ func _process(delta: float) -> void:
 		position.x -= 400 * delta
 	if Input.is_action_pressed("ui_right"):
 		position.x += 400 * delta
+	if Input.is_action_pressed("ui_up"):
+		rotation += 2 * delta
+	if Input.is_action_pressed("ui_down"):
+		rotation -= 2 * delta
