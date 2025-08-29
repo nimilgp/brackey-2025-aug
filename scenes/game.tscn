@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dsbk3erloxqd7"]
+
+[ext_resource type="PackedScene" uid="uid://gprym52bsegr" path="res://scenes/cookie.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://bw5wnun1x21n7" path="res://scenes/paddle.tscn" id="2_lnu2h"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 2)
+limit_smoothed = true
+position_smoothing_enabled = true
+
+[node name="paddle" parent="." instance=ExtResource("2_lnu2h")]
+
+[node name="cookie" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(0, -105)
