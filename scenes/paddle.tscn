@@ -8,6 +8,7 @@ size = Vector2(200, 40)
 [node name="paddle" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
+input_pickable = true
 script = ExtResource("1_3xiby")
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -22,6 +23,7 @@ offset_right = 100.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 color = Color(1, 0.18265, 0.985475, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

@@ -8,30 +8,29 @@ func _ready() -> void:
 var dragging = false
 var click_radius = 32 # Size of the sprite.
 var mouse_pos
-
-
-
-func _input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
-		mouse_pos = get_global_mouse_position()
-		
-		if (mouse_pos - position).length() < click_radius:
-			# Start dragging if the click is on the sprite.
-			if not dragging and event.pressed:
-				dragging = true
-		# Stop dragging if the button is released.
-		if dragging and not event.pressed:
-			dragging = false
-
-	if event is InputEventMouseMotion and dragging:
-		# While dragging, move the sprite with the mouse.
-		position = get_global_mouse_position()
-		
-
-
+var is_dragging = false
 var PADDLE_SPEED = 400
+
+func _input_event(viewport, event, shape_idx):
+	# Check if the event is a mouse button press.
+	if event is InputEventMouseButton:
+		# Check if it was the left mouse button and it was just pressed down.
+		if event.button_index == MOUSE_BUTTON_LEFT and event.is_pressed():
+			# When clicked, start dragging.
+			is_dragging = true
+
+func _unhandled_input(event):
+	# We use this to detect a global mouse release.
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and not event.is_pressed():
+			# When the button is released anywhere, stop dragging.
+			is_dragging = false
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Only update the position if the character is being dragged.
+	if is_dragging:
+		global_position = get_global_mouse_position()
 	# linear movement
 	if Input.is_action_pressed("ui_left"):
 		position.x -= PADDLE_SPEED * delta
