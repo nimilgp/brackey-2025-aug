@@ -18,7 +18,7 @@ func _physics_process(delta: float) -> void:
 
 func _integrate_forces(state):
 	for node : CharacterBody2D in get_colliding_bodies():
-		if node.name == "paddle":
+		if node.is_in_group("paddles"):
 			# read the rotation angle of paddle
 			var paddle_rotation = node.read_current_rotation()
 		
