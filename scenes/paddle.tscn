@@ -1,11 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://jeumh6b87v4h"]
 
-[ext_resource type="Script" uid="uid://1xcvylkb2xey" path="res://scenes/paddle.gd" id="1_3xiby"]
+[ext_resource type="Script" uid="uid://1xcvylkb2xey" path="res://scripts/paddle.gd" id="1_3xiby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut3sq"]
 size = Vector2(200, 40)
 
-[node name="paddle" type="StaticBody2D"]
+[node name="paddle" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_3xiby")
 
 [node name="ColorRect" type="ColorRect" parent="."]
