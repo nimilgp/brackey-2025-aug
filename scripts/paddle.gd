@@ -32,14 +32,14 @@ func _process(delta: float) -> void:
 	if is_dragging:
 		global_position = get_global_mouse_position()
 	# linear movement
-	if Input.is_action_pressed("ui_left"):
-		position.x -= PADDLE_SPEED * delta
-	elif Input.is_action_pressed("ui_right"):
-		position.x += PADDLE_SPEED * delta
-	elif Input.is_action_pressed("ui_up"):
-		position.y -= PADDLE_SPEED * delta
-	elif Input.is_action_pressed("ui_down"):
-		position.y += PADDLE_SPEED * delta
+	#if Input.is_action_pressed("ui_left"):
+		#position.x -= PADDLE_SPEED * delta
+	#elif Input.is_action_pressed("ui_right"):
+		#position.x += PADDLE_SPEED * delta
+	#elif Input.is_action_pressed("ui_up"):
+		#position.y -= PADDLE_SPEED * delta
+	#elif Input.is_action_pressed("ui_down"):
+		#position.y += PADDLE_SPEED * delta
 		
 	# rotation
 	if Input.is_key_pressed(KEY_A):
