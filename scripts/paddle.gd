@@ -19,6 +19,7 @@ func _input_event(viewport, event, shape_idx):
 			# When clicked, start dragging.
 			is_dragging = true
 
+
 func _unhandled_input(event):
 	# We use this to detect a global mouse release.
 	if event is InputEventMouseButton:
@@ -31,23 +32,14 @@ func _process(delta: float) -> void:
 	# Only update the position if the character is being dragged.
 	if is_dragging:
 		global_position = get_global_mouse_position()
-	# linear movement
-	#if Input.is_action_pressed("ui_left"):
-		#position.x -= PADDLE_SPEED * delta
-	#elif Input.is_action_pressed("ui_right"):
-		#position.x += PADDLE_SPEED * delta
-	#elif Input.is_action_pressed("ui_up"):
-		#position.y -= PADDLE_SPEED * delta
-	#elif Input.is_action_pressed("ui_down"):
-		#position.y += PADDLE_SPEED * delta
-		
-	# rotation
-	if Input.is_key_pressed(KEY_A):
-		rotation = 25
-	elif Input.is_key_pressed(KEY_D):
-		rotation = -25
-	elif Input.is_key_pressed(KEY_S):
-		rotation = 0
+		# rotation
+		if Input.is_key_pressed(KEY_A):
+			rotation = 25
+		elif Input.is_key_pressed(KEY_D):
+			rotation = -25
+		elif Input.is_key_pressed(KEY_S):
+			rotation = 0
+
 
 func read_current_rotation():
 	if rotation > 0:
