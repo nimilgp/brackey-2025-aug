@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+const X_VELOCITY = 300
+const Y_VELOCITY = -700
 
 
 # Called when the node enters the scene tree for the first time.
@@ -13,9 +15,6 @@ func _process(_delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	print("balls speed: ", linear_velocity)
 
-const Y_FORCE = -10000
-var thrust = Vector2(0, Y_FORCE)
-
 func _integrate_forces(state):
 	for node : CharacterBody2D in get_colliding_bodies():
 		if node.name == "paddle":
@@ -23,9 +22,11 @@ func _integrate_forces(state):
 			var paddle_rotation = node.read_current_rotation()
 		
 			if paddle_rotation == "right":
-				thrust = Vector2(0, Y_FORCE)
+				linear_velocity.x = -X_VELOCITY
 			elif paddle_rotation == "left":
-				thrust = Vector2(0, Y_FORCE)
+				linear_velocity.x = X_VELOCITY
+			elif paddle_rotation == "center":
+				linear_velocity.x = 0
 				
-			# apply rotated thrust
-			state.apply_force(thrust.rotated(rotation))
+			# maintain height
+			linear_velocity.y = Y_VELOCITY
