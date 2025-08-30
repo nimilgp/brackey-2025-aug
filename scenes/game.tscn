@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=7 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Texture2D" uid="uid://bktdj5tqa32km" path="res://assets/sky.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://tj1r5ulpjfps" path="res://scenes/proc_element.tscn" id="4_lbhrr"]
+[ext_resource type="Script" uid="uid://cxep5dpwskd31" path="res://scripts/oven.gd" id="5_iywne"]
+[ext_resource type="Script" uid="uid://bumyeq4u03gvo" path="res://scripts/cool_oven.gd" id="6_p57ef"]
 
 [node name="Game" type="Node2D"]
 
@@ -12,10 +15,25 @@ zoom = Vector2(0.7, 0.7)
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_uwrxv")
 
-[node name="paddle1" parent="." instance=ExtResource("2_lnu2h")]
-position = Vector2(0, 140)
-
 [node name="ball" parent="." instance=ExtResource("3_lbhrr")]
 physics_material_override = null
 
-[node name="paddle2" parent="." instance=ExtResource("2_lnu2h")]
+[node name="paddles" type="Node" parent="."]
+
+[node name="paddle1" parent="paddles" instance=ExtResource("2_lnu2h")]
+position = Vector2(0, 140)
+
+[node name="paddle2" parent="paddles" instance=ExtResource("2_lnu2h")]
+
+[node name="machines" type="Node" parent="."]
+
+[node name="oven" parent="machines" instance=ExtResource("4_lbhrr")]
+position = Vector2(-667, -305)
+script = ExtResource("5_iywne")
+
+[node name="sprinkles" parent="machines" instance=ExtResource("4_lbhrr")]
+position = Vector2(-599, -112)
+script = ExtResource("6_p57ef")
+
+[connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
+[connection signal="body_entered" from="machines/sprinkles" to="machines/sprinkles" method="_on_body_entered"]

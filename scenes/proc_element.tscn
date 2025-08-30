@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://tj1r5ulpjfps"]
+
+[ext_resource type="Script" uid="uid://dbs26hsq4t5qd" path="res://scripts/proc_element.gd" id="1_w40gb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_78pue"]
+
+[node name="procElement" type="Area2D" groups=["food", "procElem"]]
+scale = Vector2(2, 2)
+script = ExtResource("1_w40gb")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.558363, 0.00330042, 0.888982, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_78pue")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true

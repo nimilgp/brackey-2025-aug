@@ -3,6 +3,7 @@ extends RigidBody2D
 const X_VELOCITY = 300
 const Y_VELOCITY = -700
 
+var COMPLETED_PROCS : Array
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,3 +32,10 @@ func _integrate_forces(state):
 				
 			# maintain height
 			linear_velocity.y = Y_VELOCITY
+			
+
+func generic_processor(input : RigidBody2D):
+	# changes sprite animation
+	
+	# input: cookie, dough, etc
+	print("nimil's gay function")

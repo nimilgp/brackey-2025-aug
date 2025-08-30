@@ -14,3 +14,7 @@ config/name="cookie-crafter"
 run/main_scene="uid://dn1vfikduxn02"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+food=""
