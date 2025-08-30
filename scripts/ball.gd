@@ -13,7 +13,8 @@ func _process(_delta: float) -> void:
 	pass
 	
 func _physics_process(delta: float) -> void:
-	print("balls speed: ", linear_velocity)
+	#print("balls speed: ", linear_velocity)
+	pass
 
 func _integrate_forces(state):
 	for node : CharacterBody2D in get_colliding_bodies():
