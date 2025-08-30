@@ -18,13 +18,6 @@ texture = ExtResource("1_uwrxv")
 [node name="ball" parent="." instance=ExtResource("3_lbhrr")]
 physics_material_override = null
 
-[node name="paddles" type="Node" parent="."]
-
-[node name="paddle1" parent="paddles" instance=ExtResource("2_lnu2h")]
-position = Vector2(0, 140)
-
-[node name="paddle2" parent="paddles" instance=ExtResource("2_lnu2h")]
-
 [node name="machines" type="Node" parent="."]
 
 [node name="oven" parent="machines" instance=ExtResource("4_lbhrr")]
@@ -34,6 +27,13 @@ script = ExtResource("5_iywne")
 [node name="sprinkles" parent="machines" instance=ExtResource("4_lbhrr")]
 position = Vector2(-599, -112)
 script = ExtResource("6_p57ef")
+
+[node name="paddles" type="Node" parent="."]
+
+[node name="paddle1" parent="paddles" instance=ExtResource("2_lnu2h")]
+position = Vector2(0, 140)
+
+[node name="paddle2" parent="paddles" instance=ExtResource("2_lnu2h")]
 
 [connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/sprinkles" to="machines/sprinkles" method="_on_body_entered"]

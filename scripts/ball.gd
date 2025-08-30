@@ -11,6 +11,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	#print(position)
 	pass
 	
 func _physics_process(delta: float) -> void:
@@ -35,7 +36,8 @@ func _integrate_forces(state):
 			
 
 func generic_processor(input : RigidBody2D):
-	# changes sprite animation
+	# create new rigidbody with correct output
+	# and launch it using velocity
 	
 	# input: cookie, dough, etc
 	print("nimil's gay function")
