@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=16 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Texture2D" uid="uid://bktdj5tqa32km" path="res://assets/sky.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" uid="uid://q4rvwylkeg2x" path="res://scripts/choc_chip.gd" id="9_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bfxmfdv3dx5ss" path="res://assets/choco-chip-disp.png" id="9_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cegivgcf6mk0n" path="res://assets/dough-ball-disp.png" id="12_kvuet"]
+[ext_resource type="Script" uid="uid://de41df306yldw" path="res://scripts/kill_zone.gd" id="14_trtic"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
 
 [node name="Game" type="Node2D"]
 
@@ -72,8 +75,16 @@ position = Vector2(-192, 159)
 [node name="paddle2" parent="paddles" instance=ExtResource("2_lnu2h")]
 position = Vector2(236, 157)
 
+[node name="KillZone" type="Area2D" parent="."]
+script = ExtResource("14_trtic")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
+position = Vector2(0, 269)
+shape = SubResource("WorldBoundaryShape2D_ir15t")
+
 [connection signal="body_entered" from="machines/chocDip" to="machines/chocDip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/sprinkles" to="machines/sprinkles" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/chocChip" to="machines/chocChip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/doughDispenser" to="machines/doughDispenser" method="_on_body_entered"]
+[connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
