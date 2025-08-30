@@ -1,39 +1,79 @@
-[gd_scene load_steps=7 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=14 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Texture2D" uid="uid://bktdj5tqa32km" path="res://assets/sky.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://dw26844ugec7c" path="res://assets/chocolate-dip.png" id="4_0tnpc"]
+[ext_resource type="Script" uid="uid://be0d6ags5pojp" path="res://scripts/choc_dip.gd" id="4_dinhu"]
 [ext_resource type="PackedScene" uid="uid://tj1r5ulpjfps" path="res://scenes/proc_element.tscn" id="4_lbhrr"]
+[ext_resource type="Texture2D" uid="uid://mhpde4akrlal" path="res://assets/cool-oven.png" id="5_gee14"]
 [ext_resource type="Script" uid="uid://cxep5dpwskd31" path="res://scripts/oven.gd" id="5_iywne"]
 [ext_resource type="Script" uid="uid://bumyeq4u03gvo" path="res://scripts/cool_oven.gd" id="6_p57ef"]
+[ext_resource type="Texture2D" uid="uid://gdm6waic5t7t" path="res://assets/sprinkles.png" id="7_0tnpc"]
+[ext_resource type="Script" uid="uid://q4rvwylkeg2x" path="res://scripts/choc_chip.gd" id="9_kvpfn"]
+[ext_resource type="Texture2D" uid="uid://bfxmfdv3dx5ss" path="res://assets/choco-chip-disp.png" id="9_vtaks"]
+[ext_resource type="Texture2D" uid="uid://cegivgcf6mk0n" path="res://assets/dough-ball-disp.png" id="12_kvuet"]
 
 [node name="Game" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.7, 0.7)
+zoom = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 texture = ExtResource("1_uwrxv")
 
 [node name="ball" parent="." instance=ExtResource("3_lbhrr")]
+position = Vector2(-189, 56)
 physics_material_override = null
 
 [node name="machines" type="Node" parent="."]
 
+[node name="chocDip" parent="machines" instance=ExtResource("4_lbhrr")]
+position = Vector2(337, -2)
+script = ExtResource("4_dinhu")
+
+[node name="Sprite2D" type="Sprite2D" parent="machines/chocDip"]
+texture = ExtResource("4_0tnpc")
+
 [node name="oven" parent="machines" instance=ExtResource("4_lbhrr")]
-position = Vector2(-667, -305)
+position = Vector2(1, -3)
 script = ExtResource("5_iywne")
 
+[node name="Sprite2D" type="Sprite2D" parent="machines/oven"]
+texture = ExtResource("5_gee14")
+
 [node name="sprinkles" parent="machines" instance=ExtResource("4_lbhrr")]
-position = Vector2(-599, -112)
+position = Vector2(-337, 0)
 script = ExtResource("6_p57ef")
+
+[node name="Sprite2D" type="Sprite2D" parent="machines/sprinkles"]
+texture = ExtResource("7_0tnpc")
+
+[node name="chocChip" parent="machines" instance=ExtResource("4_lbhrr")]
+position = Vector2(337, -170)
+script = ExtResource("9_kvpfn")
+
+[node name="Sprite2D" type="Sprite2D" parent="machines/chocChip"]
+texture = ExtResource("9_vtaks")
+
+[node name="doughDispenser" parent="machines" instance=ExtResource("4_lbhrr")]
+position = Vector2(-333, -170)
+script = null
+
+[node name="Sprite2D" type="Sprite2D" parent="machines/doughDispenser"]
+texture = ExtResource("12_kvuet")
 
 [node name="paddles" type="Node" parent="."]
 
 [node name="paddle1" parent="paddles" instance=ExtResource("2_lnu2h")]
-position = Vector2(0, 140)
+position = Vector2(-192, 159)
 
 [node name="paddle2" parent="paddles" instance=ExtResource("2_lnu2h")]
+position = Vector2(236, 157)
 
+[connection signal="body_entered" from="machines/chocDip" to="machines/chocDip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/sprinkles" to="machines/sprinkles" method="_on_body_entered"]
+[connection signal="body_entered" from="machines/chocChip" to="machines/chocChip" method="_on_body_entered"]
+[connection signal="body_entered" from="machines/doughDispenser" to="machines/doughDispenser" method="_on_body_entered"]

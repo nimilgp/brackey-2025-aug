@@ -3,7 +3,7 @@ extends "res://scripts/proc_element.gd"
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PROC_NAME = "sprinkles"
-	LAUNCH_VELOCITY = Vector2(500, -100)
+	LAUNCH_VELOCITY = Vector2(400, -500)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
