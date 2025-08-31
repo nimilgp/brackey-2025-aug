@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://1xcvylkb2xey" path="res://scripts/paddle.gd" id="1_3xiby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ut3sq"]
-size = Vector2(100, 10)
+size = Vector2(68, 20)
 
 [node name="paddle" type="CharacterBody2D" groups=["paddles"]]
 collision_layer = 2
@@ -17,10 +17,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -50.0
-offset_top = -5.0
-offset_right = 50.0
-offset_bottom = 5.0
+offset_left = -34.0
+offset_top = -10.0
+offset_right = 34.0
+offset_bottom = 10.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
