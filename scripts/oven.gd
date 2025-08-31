@@ -19,8 +19,9 @@ func _on_body_entered(body: Node2D) -> void:
 	# get cookie details in base class var
 	await process_cookie(body, PROC_NAME)
 
+	# change cookie animation based on recipe
+	body.generic_processor()
 	body.visible = true
-	body.position = BODY_POSITION
 
 	# add launch script and restore gravity
 	body.linear_velocity = LAUNCH_VELOCITY

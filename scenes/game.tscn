@@ -1,7 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=17 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Texture2D" uid="uid://bktdj5tqa32km" path="res://assets/sky.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
+[ext_resource type="Texture2D" uid="uid://doa8nb5jl421b" path="res://assets/dough-ball.png" id="3_ir15t"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dw26844ugec7c" path="res://assets/chocolate-dip.png" id="4_0tnpc"]
 [ext_resource type="Script" uid="uid://be0d6ags5pojp" path="res://scripts/choc_dip.gd" id="4_dinhu"]
@@ -29,6 +30,9 @@ texture = ExtResource("1_uwrxv")
 [node name="ball" parent="." instance=ExtResource("3_lbhrr")]
 position = Vector2(-189, 56)
 physics_material_override = null
+
+[node name="Sprite2D" type="Sprite2D" parent="ball"]
+texture = ExtResource("3_ir15t")
 
 [node name="machines" type="Node" parent="."]
 

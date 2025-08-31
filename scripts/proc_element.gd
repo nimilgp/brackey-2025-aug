@@ -3,7 +3,6 @@ extends Area2D
 # Child data
 var PROC_NAME : String
 var LAUNCH_VELOCITY : Vector2
-var BODY_POSITION : Vector2
 
 @onready var timer: Timer = $Timer
 
@@ -23,7 +22,6 @@ func process_cookie(body: RigidBody2D, PROC_NAME : String):
 	
 	# store cookie data
 	var body_name = body.name
-	BODY_POSITION = body.position
 	
 	# only do this if body hasn't already been here
 	if not body.COMPLETED_PROCS.has(PROC_NAME) and body.is_in_group("food"):

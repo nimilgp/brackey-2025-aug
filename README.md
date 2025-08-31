@@ -19,7 +19,7 @@
 [ ] Instruction / Tutorial 
 
 ### Functionality
-[ ] Recipe functionality + Black Cookie \
+[x] Recipe functionality + Black Cookie \
 [ ] Enable more than one processing \
 [ ] Score board functioning \
 

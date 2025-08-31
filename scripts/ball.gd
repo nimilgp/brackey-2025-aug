@@ -5,6 +5,15 @@ const Y_VELOCITY = -500
 
 var COMPLETED_PROCS : Array
 
+var RECIPIES : Dictionary = {
+	["oven"]: "plain-cookiel",
+	["oven", "choc_dip"]: "chocolate-cookie",
+	["choc_chip"]: "choco-chip-dough-ball",
+	["choc_chip", "oven"]: "choco-chip-cookiel",
+	["choc_chip", "oven", "choc_dip"]: "double-chocolate-cookie",
+	["oven", "sprinkles"]: "sprinkles-cookie",
+}
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -35,9 +44,13 @@ func _integrate_forces(state):
 			linear_velocity.y = Y_VELOCITY
 			
 
-func generic_processor(input : RigidBody2D):
-	# create new rigidbody with correct output
-	# and launch it using velocity
+#func generic_processor(input : RigidBody2D):
+func generic_processor():
+	# change animation based on input
 	
-	# input: cookie, dough, etc
-	print("nimil's gay function")
+	# get sprite2d node
+	var sprite : Sprite2D = get_child(1)
+	var new_sprite_path = "assets/" + RECIPIES.get(COMPLETED_PROCS, "burnt-cookie") + ".png"
+	
+	# boom
+	sprite.texture = load(new_sprite_path)
