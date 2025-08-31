@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=19 format=3 uid="uid://dn1vfikduxn02"]
 
+[ext_resource type="Script" uid="uid://cdfobgve5nmsh" path="res://scripts/game_manager.gd" id="1_ca42v"]
 [ext_resource type="Texture2D" uid="uid://bktdj5tqa32km" path="res://assets/sky.png" id="1_uwrxv"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
+[ext_resource type="FontFile" uid="uid://dpfdwwpkyvc4o" path="res://assets/PixelOperator8.ttf" id="2_rysoc"]
 [ext_resource type="Texture2D" uid="uid://cmqqsq0a4x6dp" path="res://assets/dough-ball.png" id="3_ir15t"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
 [ext_resource type="Texture2D" uid="uid://dw26844ugec7c" path="res://assets/chocolate-dip.png" id="4_0tnpc"]
@@ -19,6 +21,18 @@
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
 
 [node name="Game" type="Node2D"]
+
+[node name="game-manager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_ca42v")
+
+[node name="money-label" type="Label" parent="game-manager"]
+offset_left = -246.0
+offset_top = -195.0
+offset_right = -206.0
+offset_bottom = -172.0
+theme_override_fonts/font = ExtResource("2_rysoc")
+text = "$10"
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.5, 1.5)
