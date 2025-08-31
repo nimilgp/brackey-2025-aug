@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=22 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Script" uid="uid://cdfobgve5nmsh" path="res://scripts/game_manager.gd" id="1_ca42v"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
@@ -17,8 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://cegivgcf6mk0n" path="res://assets/dough-ball-disp.png" id="12_kvuet"]
 [ext_resource type="Script" uid="uid://bdvi6pxyiwn41" path="res://scripts/dough_dispenser.gd" id="13_ca42v"]
 [ext_resource type="Script" uid="uid://de41df306yldw" path="res://scripts/kill_zone.gd" id="14_trtic"]
+[ext_resource type="Texture2D" uid="uid://dn2e38coawyop" path="res://assets/collection-box.png" id="18_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://8uljcly0vvll" path="res://assets/plain-cookiel.png" id="19_264po"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ssvqc"]
+size = Vector2(128, 102)
 
 [node name="Game" type="Node2D"]
 
@@ -91,7 +96,7 @@ script = ExtResource("13_ca42v")
 texture = ExtResource("12_kvuet")
 
 [node name="Timer2" type="Timer" parent="machines/doughDispenser"]
-wait_time = 5.0
+wait_time = 7.0
 autostart = true
 
 [node name="paddles" type="Node" parent="."]
@@ -108,6 +113,22 @@ script = ExtResource("14_trtic")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
 position = Vector2(0, 269)
 shape = SubResource("WorldBoundaryShape2D_ir15t")
+
+[node name="customer" type="Area2D" parent="."]
+position = Vector2(0, 133)
+
+[node name="Sprite2D" type="Sprite2D" parent="customer"]
+scale = Vector2(2, 2)
+texture = ExtResource("18_ssvqc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="customer"]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_ssvqc")
+
+[node name="cookie" type="Sprite2D" parent="customer"]
+position = Vector2(0, 10)
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("19_264po")
 
 [connection signal="body_entered" from="machines/chocDip" to="machines/chocDip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
