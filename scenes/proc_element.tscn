@@ -3,12 +3,14 @@
 [ext_resource type="Script" uid="uid://dbs26hsq4t5qd" path="res://scripts/proc_element.gd" id="1_w40gb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_78pue"]
+size = Vector2(15.75, 15.25)
 
 [node name="procElement" type="Area2D" groups=["food", "procElem"]]
 scale = Vector2(2, 2)
 script = ExtResource("1_w40gb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.25, 0.25)
 scale = Vector2(2, 2)
 shape = SubResource("RectangleShape2D_78pue")
 
