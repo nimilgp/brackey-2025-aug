@@ -4,14 +4,19 @@
 - Nimil George Pradeep
 - Abhinand D Manoj
 
+## Description
+
+Objective: Keep a lookout so that your mony doesn't evaporate. If you hit $0, you lose
+
+Time your run
+
 ## Todo: 
 
-### Pixel art
 
-[ ] Bg image \
-[ ] Score board \
-[ ] Customer \
+### Pixel art
+[x] Bg image \
 [ ] Cookie recipe UI
+[ ] Paddle UI
 
 ### Misc
 [ ] Game page itch.io \
@@ -20,9 +25,12 @@
 
 ### Functionality
 [x] Recipe functionality + Black Cookie \
-[ ] Enable more than one processing \
-[ ] Score board functioning \
+[x] Enable more than one processing \
+[ ] Stopwatch \
+[ ] Mony clac and display
+[ ] Customer requirement cookie display
 
+#### By 3 pm: Complete game. Start game page and instructions
 
 ## Recipies
 
