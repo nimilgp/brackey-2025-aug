@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://cdfobgve5nmsh" path="res://scripts/game_manager.gd" id="1_ca42v"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
-[ext_resource type="FontFile" uid="uid://43g2qtvrm25g" path="res://assets/PixelOperator8.ttf" id="2_rysoc"]
+[ext_resource type="FontFile" uid="uid://dpfdwwpkyvc4o" path="res://assets/PixelOperator8.ttf" id="2_rysoc"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://cmmu8x20mkx75" path="res://assets/bg-image.png" id="3_rysoc"]
+[ext_resource type="Texture2D" uid="uid://ccvtlw5i1kqm" path="res://assets/bg-image.png" id="3_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dw26844ugec7c" path="res://assets/chocolate-dip.png" id="4_0tnpc"]
 [ext_resource type="Script" uid="uid://be0d6ags5pojp" path="res://scripts/choc_dip.gd" id="4_dinhu"]
 [ext_resource type="PackedScene" uid="uid://tj1r5ulpjfps" path="res://scenes/proc_element.tscn" id="4_lbhrr"]
@@ -34,6 +34,13 @@ offset_bottom = -172.0
 theme_override_fonts/font = ExtResource("2_rysoc")
 text = "$10"
 metadata/_edit_use_anchors_ = true
+
+[node name="time-label" type="Label" parent="game-manager"]
+offset_left = -161.0
+offset_top = -196.0
+offset_right = -121.0
+offset_bottom = -173.0
+theme_override_fonts/font = ExtResource("2_rysoc")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, -29)
