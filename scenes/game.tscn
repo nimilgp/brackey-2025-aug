@@ -33,8 +33,10 @@ offset_right = -206.0
 offset_bottom = -172.0
 theme_override_fonts/font = ExtResource("2_rysoc")
 text = "$10"
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -29)
 zoom = Vector2(1.5, 1.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
