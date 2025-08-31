@@ -1,6 +1,6 @@
 extends RigidBody2D
 
-const X_VELOCITY = 300
+const X_VELOCITY = 200
 const Y_VELOCITY = -500
 
 var COMPLETED_PROCS : Array
