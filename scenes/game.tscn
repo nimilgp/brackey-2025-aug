@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=25 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Script" uid="uid://cdfobgve5nmsh" path="res://scripts/game_manager.gd" id="1_ca42v"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://dns0sc10ml08x" path="res://scripts/customer.gd" id="18_1kice"]
 [ext_resource type="Texture2D" uid="uid://5s6j4nd4o8hr" path="res://assets/collection-box.png" id="18_ssvqc"]
 [ext_resource type="Texture2D" uid="uid://dmoppa5h2qax5" path="res://assets/plain-cookiel.png" id="19_264po"]
+[ext_resource type="AudioStream" uid="uid://dtx04vvk3adur" path="res://assets/Rave Gothic Angelcore by Infraction, Alexi Action [No Copyright Music] Like A Ghost.mp3" id="21_5newe"]
+[ext_resource type="Script" uid="uid://c0h3ly0ncu3ff" path="res://scripts/bgm.gd" id="22_37s47"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
 
@@ -131,6 +133,10 @@ shape = SubResource("RectangleShape2D_ssvqc")
 position = Vector2(0, 10)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("19_264po")
+
+[node name="bgm" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("21_5newe")
+script = ExtResource("22_37s47")
 
 [connection signal="body_entered" from="machines/chocDip" to="machines/chocDip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/oven" to="machines/oven" method="_on_body_entered"]
