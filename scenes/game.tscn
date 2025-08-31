@@ -1,10 +1,10 @@
-[gd_scene load_steps=22 format=3 uid="uid://dn1vfikduxn02"]
+[gd_scene load_steps=23 format=3 uid="uid://dn1vfikduxn02"]
 
 [ext_resource type="Script" uid="uid://cdfobgve5nmsh" path="res://scripts/game_manager.gd" id="1_ca42v"]
 [ext_resource type="PackedScene" uid="uid://jeumh6b87v4h" path="res://scenes/paddle.tscn" id="2_lnu2h"]
-[ext_resource type="FontFile" uid="uid://dpfdwwpkyvc4o" path="res://assets/PixelOperator8.ttf" id="2_rysoc"]
+[ext_resource type="FontFile" uid="uid://canlu1tdcifmt" path="res://assets/PixelOperator8.ttf" id="2_rysoc"]
 [ext_resource type="PackedScene" uid="uid://ba6rnpb5ohnyc" path="res://scenes/ball.tscn" id="3_lbhrr"]
-[ext_resource type="Texture2D" uid="uid://ccvtlw5i1kqm" path="res://assets/bg-image.png" id="3_rysoc"]
+[ext_resource type="Texture2D" uid="uid://coqfjoelvkuti" path="res://assets/bg-image.png" id="3_rysoc"]
 [ext_resource type="Texture2D" uid="uid://dw26844ugec7c" path="res://assets/chocolate-dip.png" id="4_0tnpc"]
 [ext_resource type="Script" uid="uid://be0d6ags5pojp" path="res://scripts/choc_dip.gd" id="4_dinhu"]
 [ext_resource type="PackedScene" uid="uid://tj1r5ulpjfps" path="res://scenes/proc_element.tscn" id="4_lbhrr"]
@@ -17,8 +17,9 @@
 [ext_resource type="Texture2D" uid="uid://cegivgcf6mk0n" path="res://assets/dough-ball-disp.png" id="12_kvuet"]
 [ext_resource type="Script" uid="uid://bdvi6pxyiwn41" path="res://scripts/dough_dispenser.gd" id="13_ca42v"]
 [ext_resource type="Script" uid="uid://de41df306yldw" path="res://scripts/kill_zone.gd" id="14_trtic"]
-[ext_resource type="Texture2D" uid="uid://dn2e38coawyop" path="res://assets/collection-box.png" id="18_ssvqc"]
-[ext_resource type="Texture2D" uid="uid://8uljcly0vvll" path="res://assets/plain-cookiel.png" id="19_264po"]
+[ext_resource type="Script" uid="uid://dns0sc10ml08x" path="res://scripts/customer.gd" id="18_1kice"]
+[ext_resource type="Texture2D" uid="uid://5s6j4nd4o8hr" path="res://assets/collection-box.png" id="18_ssvqc"]
+[ext_resource type="Texture2D" uid="uid://dmoppa5h2qax5" path="res://assets/plain-cookiel.png" id="19_264po"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
 
@@ -116,6 +117,7 @@ shape = SubResource("WorldBoundaryShape2D_ir15t")
 
 [node name="customer" type="Area2D" parent="."]
 position = Vector2(0, 133)
+script = ExtResource("18_1kice")
 
 [node name="Sprite2D" type="Sprite2D" parent="customer"]
 scale = Vector2(2, 2)
@@ -137,3 +139,4 @@ texture = ExtResource("19_264po")
 [connection signal="body_entered" from="machines/doughDispenser" to="machines/doughDispenser" method="_on_body_entered"]
 [connection signal="timeout" from="machines/doughDispenser/Timer2" to="machines/doughDispenser" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
+[connection signal="body_entered" from="customer" to="customer" method="_on_body_entered"]

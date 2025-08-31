@@ -17,6 +17,6 @@ func reduce_money(amount):
 func _process(delta: float) -> void:
 	time += delta
 	time_label.text = "Time:" + str(snappedf(time,0.01))
-	if money == 0:
-		pass
+	if money <= 0:
+		get_tree().quit()
 		# end game
