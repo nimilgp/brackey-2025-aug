@@ -15,5 +15,3 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# destroy cookie
 	body.queue_free()
-	
-	# deduce mony

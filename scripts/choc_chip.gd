@@ -1,5 +1,9 @@
 extends "res://scripts/proc_element.gd"
 
+@onready var game_manager: Node = %"game-manager"
+
+const CHOC_CHIP_PRICE = 2
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	PROC_NAME = "choc_chip"
@@ -18,6 +22,8 @@ func _on_body_entered(body: Node2D) -> void:
 	
 	# get cookie details in base class var
 	await process_cookie(body, PROC_NAME)
+	
+	game_manager.reduce_money(CHOC_CHIP_PRICE)
 	
 	# change cookie animation based on recipe
 	body.generic_processor()
