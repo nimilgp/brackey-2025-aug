@@ -16,6 +16,7 @@
 [ext_resource type="Script" uid="uid://q4rvwylkeg2x" path="res://scripts/choc_chip.gd" id="9_kvpfn"]
 [ext_resource type="Texture2D" uid="uid://bfxmfdv3dx5ss" path="res://assets/choco-chip-disp.png" id="9_vtaks"]
 [ext_resource type="Texture2D" uid="uid://cegivgcf6mk0n" path="res://assets/dough-ball-disp.png" id="12_kvuet"]
+[ext_resource type="Script" uid="uid://bdvi6pxyiwn41" path="res://scripts/dough_dispenser.gd" id="13_ca42v"]
 [ext_resource type="Script" uid="uid://de41df306yldw" path="res://scripts/kill_zone.gd" id="14_trtic"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ir15t"]
@@ -44,9 +45,6 @@ texture = ExtResource("1_uwrxv")
 [node name="ball" parent="." instance=ExtResource("3_lbhrr")]
 position = Vector2(-189, 56)
 physics_material_override = null
-
-[node name="Sprite2D" type="Sprite2D" parent="ball"]
-texture = ExtResource("3_ir15t")
 
 [node name="machines" type="Node" parent="."]
 
@@ -80,10 +78,14 @@ texture = ExtResource("9_vtaks")
 
 [node name="doughDispenser" parent="machines" instance=ExtResource("4_lbhrr")]
 position = Vector2(-337, -100)
-script = null
+script = ExtResource("13_ca42v")
 
 [node name="Sprite2D" type="Sprite2D" parent="machines/doughDispenser"]
 texture = ExtResource("12_kvuet")
+
+[node name="Timer2" type="Timer" parent="machines/doughDispenser"]
+wait_time = 5.0
+autostart = true
 
 [node name="paddles" type="Node" parent="."]
 
@@ -105,4 +107,5 @@ shape = SubResource("WorldBoundaryShape2D_ir15t")
 [connection signal="body_entered" from="machines/sprinkles" to="machines/sprinkles" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/chocChip" to="machines/chocChip" method="_on_body_entered"]
 [connection signal="body_entered" from="machines/doughDispenser" to="machines/doughDispenser" method="_on_body_entered"]
+[connection signal="timeout" from="machines/doughDispenser/Timer2" to="machines/doughDispenser" method="_on_timer_2_timeout"]
 [connection signal="body_entered" from="KillZone" to="KillZone" method="_on_body_entered"]
