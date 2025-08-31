@@ -15,8 +15,8 @@ Time your run
 
 ### Pixel art
 [x] Bg image \
-[ ] Cookie recipe UI
-[ ] Paddle UI
+[ ] Cookie recipe UI \
+[x] Paddle UI
 
 ### Misc
 [ ] Game page itch.io \
@@ -26,8 +26,8 @@ Time your run
 ### Functionality
 [x] Recipe functionality + Black Cookie \
 [x] Enable more than one processing \
-[ ] Stopwatch \
-[ ] Mony clac and display
+[x] Stopwatch \
+[ ] Mony clac and display \
 [ ] Customer requirement cookie display
 
 #### By 3 pm: Complete game. Start game page and instructions
