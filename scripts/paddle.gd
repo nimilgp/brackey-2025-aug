@@ -31,6 +31,12 @@ func _unhandled_input(event):
 func _process(delta: float) -> void:
 	# Only update the position if the character is being dragged.
 	if is_dragging:
+		# get sprite2d node
+		var sprite : Sprite2D = get_child(1)
+		var new_sprite_path = "assets/paddle-sprites2.png"
+		# boom
+		sprite.texture = load(new_sprite_path)
+		
 		global_position = get_global_mouse_position()
 		# rotation
 		if Input.is_key_pressed(KEY_A):
@@ -39,6 +45,11 @@ func _process(delta: float) -> void:
 			rotation = -25
 		elif Input.is_key_pressed(KEY_S):
 			rotation = 0
+	else:
+		var sprite : Sprite2D = get_child(1)
+		var new_sprite_path = "assets/paddle-sprites1.png"
+		# boom
+		sprite.texture = load(new_sprite_path)
 
 
 func read_current_rotation():
