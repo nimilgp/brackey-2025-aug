@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://cj6ad02n0idxc"]
 
-[ext_resource type="Texture2D" uid="uid://bj40gp8dllpsb" path="res://assets/choco-chip-cookiel.png" id="1_013yr"]
-[ext_resource type="FontFile" uid="uid://dpfdwwpkyvc4o" path="res://assets/PixelOperator8.ttf" id="1_v6p8y"]
-[ext_resource type="Texture2D" uid="uid://cm0md6ujn1cdx" path="res://assets/sprinkles-cookie.png" id="2_8vmu4"]
+[ext_resource type="Texture2D" uid="uid://ce05py1risrok" path="res://assets/choco-chip-cookiel.png" id="1_013yr"]
+[ext_resource type="FontFile" uid="uid://canlu1tdcifmt" path="res://assets/PixelOperator8.ttf" id="1_v6p8y"]
+[ext_resource type="Texture2D" uid="uid://ca230cwim26nn" path="res://assets/sprinkles-cookie.png" id="2_8vmu4"]
 [ext_resource type="Script" uid="uid://cmqst7blahvjc" path="res://scripts/start_button.gd" id="2_ak2if"]
-[ext_resource type="Texture2D" uid="uid://8uljcly0vvll" path="res://assets/plain-cookiel.png" id="3_xfn3p"]
-[ext_resource type="Texture2D" uid="uid://s28hdbamqx48" path="res://assets/chocolate-cookie.png" id="4_rhgbh"]
-[ext_resource type="Texture2D" uid="uid://d2qr1r8grc26d" path="res://assets/burnt-cookie.png" id="5_skmiq"]
-[ext_resource type="Texture2D" uid="uid://j2i5ubdm0f1u" path="res://assets/double-chocolate-cookie.png" id="6_lf08s"]
+[ext_resource type="Texture2D" uid="uid://dmoppa5h2qax5" path="res://assets/plain-cookiel.png" id="3_xfn3p"]
+[ext_resource type="Texture2D" uid="uid://besyfur312nm6" path="res://assets/chocolate-cookie.png" id="4_rhgbh"]
+[ext_resource type="Texture2D" uid="uid://bw25w00u5eeaj" path="res://assets/burnt-cookie.png" id="5_skmiq"]
+[ext_resource type="Texture2D" uid="uid://bes7o6hhwjhn1" path="res://assets/double-chocolate-cookie.png" id="6_lf08s"]
 
 [node name="TitleScreen" type="Control"]
 layout_mode = 3
@@ -100,7 +100,7 @@ theme_override_font_sizes/font_size = 25
 text = "HOW TO PLAY:
 
  1) Create cookies according to the orders. 
- 2) Ingrediants cost money. Make sure not to waste
+ 2) Ingredients cost money. Make sure not to waste
  3) Make sure to have fun"
 
 [connection signal="pressed" from="StartButton" to="StartButton" method="_on_pressed"]

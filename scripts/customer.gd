@@ -6,13 +6,12 @@ var CURRENT_RECIPE : String
 var PRICE : Dictionary = {
 	"plain-cookiel": 5,
 	"chocolate-cookie": 7,
-	"choco-chip-dough-ball": 3,
 	"choco-chip-cookiel": 6,
 	"double-chocolate-cookie": 9,
 	"sprinkles-cookie": 7
 }
 
-const COOKIE_COUNT = 6
+const COOKIE_COUNT = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
